@@ -8,10 +8,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+<<<<<<< HEAD
         android:theme="@style/AppTheme">
         <activity
             android:name=".PlaceInformationActivity"
             android:label="@string/app_name">
+=======
+        android:theme="@style/Theme.AppCompat">
+        <activity android:name=".PlaceDescriptionActivity">as
+>>>>>>> 6f910c21081c12730fba03559b25c14d071cb931
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
