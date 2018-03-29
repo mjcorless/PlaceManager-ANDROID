@@ -1,7 +1,5 @@
 package placemanager.mjcorless.bsse.asu.edu.placemanager.models;
 
-import placemanager.mjcorless.bsse.asu.edu.placemanager.enums.PlaceCategory;
-
 /**
  * Created by mcorl on 3/28/2018.
  * Example Place represented in Json
@@ -40,12 +38,9 @@ public class Place
 		this.description = description;
 	}
 
-	public PlaceCategory getCategory()
-	{
-		return category;
-	}
+	public String getCategory()	{ return category;	}
 
-	public void setCategory(PlaceCategory category)
+	public void setCategory(String category)
 	{
 		this.category = category;
 	}
@@ -107,7 +102,7 @@ public class Place
 	private String description;
 
 	// describes the type of place this entry describes.
-	private PlaceCategory category;
+	private String category;
 
 	// This field is equivalent to the first line that would appear in an address, sometimes called
 	// the recipient line. It indicates the individual or organization to which the address pertains.
