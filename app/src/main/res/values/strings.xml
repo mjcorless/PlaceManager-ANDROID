@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Place Manager</string>
+
+    <!-- Strings Place Information -->
+    <string name="place">Place</string>
+    <string name="description">Description</string>
+    <string name="category">Category</string>
+    <string name="addressTitle">Address Title</string>
+    <string name="addressFull">Address</string>
+    <string name="elevation">Elevation</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
 </resources>

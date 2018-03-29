@@ -1,20 +1,18 @@
-package placemanager.mjcorless.bsse.asu.edu.placemanager.models;
-
-import placemanager.mjcorless.bsse.asu.edu.placemanager.enums.PlaceCategory;
+package mjcorless.bsse.asu.edu.placemanager.models;
 
 /**
  * Created by mcorl on 3/28/2018.
  * Example Place represented in Json
- *  {
- "name" : "ASU-Poly",
- "description" : "Home of ASU's Software Engineering Programs",
- "category" : "School",
- "address-title" : "ASU Software Engineering",
- "address-street" : "7171 E Sonoran Arroyo Mall\nPeralta Hall 230\nMesa AZ 85212",
- "elevation" : 1384.0,
- "latitude" : 33.306388,
- "longitude" : -111.679121
- }
+ * {
+ * "name" : "ASU-Poly",
+ * "description" : "Home of ASU's Software Engineering Programs",
+ * "category" : "School",
+ * "address-title" : "ASU Software Engineering",
+ * "address-street" : "7171 E Sonoran Arroyo Mall\nPeralta Hall 230\nMesa AZ 85212",
+ * "elevation" : 1384.0,
+ * "latitude" : 33.306388,
+ * "longitude" : -111.679121
+ * }
  */
 
 // dummy class to encapsulate needed information for http://pooh.poly.asu.edu/Mobile/Assigns/Assign1/assign1.html
@@ -40,12 +38,9 @@ public class Place
 		this.description = description;
 	}
 
-	public PlaceCategory getCategory()
-	{
-		return category;
-	}
+	public String getCategory() { return category; }
 
-	public void setCategory(PlaceCategory category)
+	public void setCategory(String category)
 	{
 		this.category = category;
 	}
@@ -107,7 +102,7 @@ public class Place
 	private String description;
 
 	// describes the type of place this entry describes.
-	private PlaceCategory category;
+	private String category;
 
 	// This field is equivalent to the first line that would appear in an address, sometimes called
 	// the recipient line. It indicates the individual or organization to which the address pertains.
