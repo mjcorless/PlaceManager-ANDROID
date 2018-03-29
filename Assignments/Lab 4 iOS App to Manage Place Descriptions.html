@@ -1,0 +1,130 @@
+
+<!-- saved from url=(0060)http://pooh.poly.asu.edu/Mobile/Assigns/Assign4/assign4.html -->
+<html class="gr__pooh_poly_asu_edu"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Lab 4 iOS App to Manage Place Descriptions</title>
+<!--<base target="_top">--><base href="." target="_top">
+
+<meta name="keywords" content="mobile applications, Swift, iOS, Android,
+Tim Lindquist">
+<style type="text/css">
+<!--
+.TitleFont {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 24pt; font-style: normal; font-weight: bold; color: #FFCC00}
+-->
+</style><style></style></head>
+<body bgcolor="#E0E0AF" data-gr-c-s-loaded="true">
+<table border="2" width="100%">
+  <tbody><tr> 
+    <td height="95" width="23%" bgcolor="#FFC20E"> 
+      <div align="center"><font size="6" color="#9B0033"><b>Ser423</b></font></div>
+    </td>
+    <td height="95" width="77%" class="TitleFont" bgcolor="#9B0033"> 
+      <div align="center"><font size="6" color="#FFC20E"><b>Mobile Computing</b></font></div>
+    </td>
+  </tr>
+</tbody></table>
+
+<h2>Lab 4 iOS App to Manage Place Descriptions</h2>
+
+<h3><font color="#9B0033">Due as described on Blackboard.
+   </font></h3>
+<font color="#9B0033">Changes since distribution:
+<ul>
+  <li>No changes.
+  </li>
+</ul>
+</font>
+
+<p><b><font size="+1">Description</font></b>
+</p><p>
+You are to construct a multiple view iOS app for managing <b>PlaceDescriptions</b>.
+The app should be based on the Android app that you developed for Lab3 and your
+first lab submission in which you created a <b>Swift</b>.
+<b>PlaceDescription</b> class. This app is similar to that one, but uses more
+complex controls and multiple views to display and manage a collection of
+<b>PlaceDescription</b> objects. Add a <b>PlaceLibrary</b> class which retains
+place objects. This app does not need to use the network or access a <b>Place</b> database,
+although a future revision of the app will develop these aspects.
+
+Your app should provide a list of all place names contained in the collection.
+It should allow the user to select one title and see all of the information about
+that title, and it should provide the ability to add or remove place description
+entries. New descriptions should be added to the collection
+by the user manually entering the appropriate information needed to create a
+<b>PlaceDescription</b> object.
+Include at least the same properties as were implemented in the first lab.
+<a href="http://pooh.poly.asu.edu/Mobile/Assigns/Assign4/places.json">Here</a>
+is the instructors json initialization file that my be useful in
+creating your solution.
+
+</p><p><b><font size="+1">Constraints</font></b>
+</p><p>
+In the iOS app adhere to the following constraints:
+</p><ol>
+  <li>Your app should not be a <b>split-screen</b>, and it should use a <b>Navigation
+  Controller</b> to control the navigation bar.
+  </li><li>Use a <b>UITableViewController</b> and your storyboard should include a
+  <b>Navigation Controller</b>.</li>
+  <li>Use at least the following basic controls:
+  <b>Button</b>, <b>TextField</b>, and a
+  <b>Picker</b>.</li>
+  <li>Provides separate classes for <b>PlaceDescription</b> and <b>Place Library</b></li>
+</ol>
+<p>
+The same packaging, documentation and solution formatting constraints as with the
+prior assignments apply to this assignment as well:
+</p><ol>
+  <li>Place all of your application source code into the package named:
+  <b>edu.asu.bsse.asuriteid.appname</b>
+  <br>where <b>bsse</b> designates your academic program:
+  <b>bscse</b>, <b>msse</b>, <b>bsse</b>, <b>bscs</b>, which stand for
+  <b>BS Computer Systems Engineering</b>, <b>MS Software Engineering</b>, <b>BS Software Engineering</b>,
+  or <b>BS Computer Science</b> respectively. <br><b>asuriteid</b> is your asurite id.</li>
+  <li>As part of all class header comments, that you create and turn-in this semester,
+  include a copyright notice, such as:
+  <b>Copyright 2016 Your Name</b>.</li>
+  <li>As part of the class header comments, include a <b>right to use</b> statement.
+  The examples presented in class use the Apache License Version 2, but you should put
+  whatever rights you prefer. At the very least, you must provide the instuctor and
+  the University with the right to build and evaluate
+  the software package for the purpose of determining your grade and program assessment.</li>
+  <li>As part of the class header comments, include a reference to the software's author, such as:<br>
+  <b>@author &nbsp;&nbsp;FirstName LastName&nbsp;&nbsp;&nbsp;&nbsp;mailto:FirstName.LastName@asu.edu</b>.</li>
+  <li>As part of the class header comments, include an indication of the software version, such as:<br>
+  <b>@version March 2, 2016</b></li>
+</ol>
+These comments are required on all code that you generate this semester. If you hand in an
+assigment that does not include them, it will not be graded.
+
+<p><b><font size="+1">What To Hand-In</font></b>
+</p><p>
+Structure your project as a single sub-directory of the folder named
+<b>Assign4MyASURITEID</b>.
+The sub-directory should contain the <b>iOS</b> app.
+You will submit this project, by first cleaning it (to remove all generated files.
+Then create a <b>jar</b> or <b>zip</b> archive of the project (Assign4*) directory.
+You can create a <b>Java Archive (jar)</b> by executing the following command from
+a terminal in the directory which is parent to the project directory:<br><br>
+<b>jar&nbsp;&nbsp;&nbsp;-cvf&nbsp;&nbsp;&nbsp;Assign4MyASURITEID.jar&nbsp;&nbsp;&nbsp;Assign4MyASURITEID/</b><br><br>
+That archive will then be submitted via
+<b>Blackboard</b>. See the Content section.
+</p><p><b><font size="+1">Grading Criteria</font></b>
+</p><p>
+</p><ul>
+  <li><b>5 points</b>. Your solution builds using Xcode. And, your
+  UI appears properly in the simulator with a <b>iPhone 6s</b>.
+  </li>
+  <li><b>5 points</b>. Your app should define and properly use all <b>all</b>
+  of the controls discussed above in the section on <b>Constraints</b>.
+  </li>
+  <li><b>5 points</b>. Your solution includes comments described above as headers for each
+  class used in the apps.
+  </li><li><b>5 points</b>. Your app provides the ability to list all place names, to display
+  the details of a single place, and to manually add and remove place descriptions.
+  </li>
+<hr>
+<center>
+Email: <a href="mailto:Tim@asu.edu">Tim.Lindquist@asu.edu</a> | <a href="http://pooh.poly.asu.edu/Mobile/index.html">Ser423 Home</a><br>
+</center>
+
+
+</ul></body></html>

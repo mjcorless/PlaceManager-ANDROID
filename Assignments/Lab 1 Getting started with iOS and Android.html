@@ -1,0 +1,185 @@
+
+<!-- saved from url=(0060)http://pooh.poly.asu.edu/Mobile/Assigns/Assign1/assign1.html -->
+<html class="gr__pooh_poly_asu_edu"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Lab 1 Getting started with iOS and Android</title>
+<!--<base target="_top">--><base href="." target="_top">
+
+<meta name="keywords" content="mobile applications, Swift, iOS, Android,
+Tim Lindquist">
+<style type="text/css">
+<!--
+.TitleFont {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 24pt; font-style: normal; font-weight: bold; color: #FFCC00}
+-->
+</style><style></style></head>
+<body bgcolor="#E0E0AF" data-gr-c-s-loaded="true">
+<table border="2" width="100%">
+  <tbody><tr> 
+    <td height="95" width="23%" bgcolor="#FFC20E"> 
+      <div align="center"><font size="6" color="#9B0033"><b>Ser423</b></font></div>
+    </td>
+    <td height="95" width="77%" class="TitleFont" bgcolor="#9B0033"> 
+      <div align="center"><font size="6" color="#FFC20E"><b>Mobile Computing</b></font></div>
+    </td>
+  </tr>
+</tbody></table>
+
+<h2>Lab 1 Getting Started with iOS and Android</h2>
+
+<font color="#9B0033">Changes since distribution:
+<ul>
+  <li>No changes.
+  </li>
+</ul>
+</font>
+
+<p><b><font size="+1">Description</font></b>
+</p><p>
+You are to construct a single view (scene) app for <b>Swift/iOS</b> and another for
+<b>Java/Android</b> to display <b>Place</b> information as described below.
+This assignment, and some others this semester build on <b>Geocoding Services</b>, such
+as those provided by:
+<a href="https://geoservices.tamu.edu/Services/Geocode/" target="_blank">Texas A&amp;M Geoservices</a>.
+These are common services utilized by many mobile and web apps where mapping and geo-location
+is required. You will not be required to subscribe to any <b>Geocoding Services</b> to complete this
+or other assignments this semester. In this app, you will be defining a class for a
+<b>place description</b>. In future apps, we'll create an underlying model for apps that
+use places, and explore different approaches for representing this model.
+We will look at multi-view apps, navigation among views, databases, networking, mapping,
+and location services, for example.
+</p><p>
+Both of the apps you devleop for this assignmet should display the information of a
+<b>PlaceDescription</b> as will fit in a single view. Both should be single-view apps.
+For our purposes a place is a simplified holder for information about geographic places
+of interest, such as a waypoint, and includes at least the following information:
+</p><ul>
+  <li><b>Name</b>. A simple string, which is unique among all names of places for this user. Usually
+  one or two words.</li>
+  <li><b>Description</b>. Text providing descriptive information about the place.</li>
+  <li><b>Category</b>. Text describing the type of place this entry describes. Sample categories are
+  <b>residence</b>, <b>travel</b>, and <b>hike</b>.</li>
+  <li><b>Address Title</b>. This field is equivalent to the first line that would appear in an address,
+  sometimes called the <b>recipient line</b>. It indicates the individual or organization to which the
+  address pertains. This field is generally not used in a geocoding lookup.</li>
+  <li><b>Address Street, City, State, Country, Zip Code</b>. The rest of an address. This includes the street
+  address, city or town, the state and optionally country and/or zip code. Although the examples indicate
+  otherwise, you may assume <b>USA</b> address format only.</li>
+  <li><b>elevation</b>. Feet mean sea level elevation of the place. This field is also generally not used
+  in geocoding services, but is useful in route planning.</li>
+  <li><b>latitude</b>. Degrees latitude, using a single double value to represent. Lines of equal latitude
+  run parallel to the Equator. Values range from
+  -90.0 to +90.0. Negative values refer to the southern hemisphere and positive values to the northern
+  hemisphere.</li>
+  <li><b>longitude</b>. Degrees of longitude, using a single double value. Values range from -180.0 to +180.0.
+  Lines of equal longitude run perpendicular to the Equator. Negative values increase west from the Prime
+  Meridian, which is longitude 0.0 and is located in Greenwich England. Positive values increase east from
+  the Prime Meridian. 180.0 (plus and minus) is the International Date Line.</li>
+  <li><b>Example</b>. Here is an example <b>Place Description</b> represented in <b>Json</b>:
+  <pre>  {
+    "name" : "ASU-Poly",
+    "description" : "Home of ASU's Software Engineering Programs",
+    "category" : "School",
+    "address-title" : "ASU Software Engineering",
+    "address-street" : "7171 E Sonoran Arroyo Mall\nPeralta Hall 230\nMesa AZ 85212",
+    "elevation" : 1384.0,
+    "latitude" : 33.306388,
+    "longitude" : -111.679121
+  }
+  </pre></li>
+</ul>
+You are to construct a <b>PlaceDescription</b> class for each app.
+<b>PlaceDescription</b> is a container for the information described above.
+Through properties, methods, or visibility controls,
+provide that users of the class may access and set values of each field. 
+<p>
+In future assignments, your class should provide the ability to calculate the
+<b>great-circle spherical distance</b> between two <b>Place Description</b>s,
+as well as an <b>initial heading</b>. You can use the following
+references (or any others you find) to see how to calculate these values using available math packages. See: 
+<a href="https://en.wikipedia.org/wiki/Great-circle_distance" target="_blank">Wikipedia Great Circle Distance</a>
+And, another reference which expresses the same in <b>javascript</b>:
+<a href="http://www.movable-type.co.uk/scripts/latlong.html" target="_blank">Java Script Calculations</a>
+You should understand the difference between <b>Great Circle</b> and <b>Rhumb-line</b> distances.
+One reference showing the difference is: 
+<a href="https://en.wikipedia.org/wiki/Rhumb_line" target="_blank">Wikipedia Rhumb Line</a>.
+</p><p>
+These assignments also require your <b>Place Description</b> to serialize to and from
+a <b>Json</b> representation. You should build that into your class definition to aid
+in initializing a place description object for display in your app.
+</p><p>
+To do so, your class would include a constructor that builds a <b>PlaceDescription</b> object from
+a string of the <b>Json</b> form shown above.
+You may also want to include a <b>toJsonString</b> method that returns a string of the <b>Json</b> in the same
+format.
+</p><p>
+Your app should have a single view, and in that view display the fields referenced above on a single screen.
+</p><p>
+<b>Make the following additions to the app demonstrated</b>.
+</p><p>
+Your UI should primarily utilize the layouts and simple widgets introduced in the class,
+and you may form it based on the example given in class (or Unit 1 first app videos).
+Your solutions should follow the documentation and packaging constraints outlined below.
+</p><p>
+</p><ol>
+  <li>Place all of your application source code into the package named:
+  <b>edu.asu.bsse.asuriteid.appname</b>
+  <br>where <b>bsse</b> designates your academic program:
+  <b>bscse</b>, <b>msse</b>, <b>bsse</b>, <b>bscs</b>, which stand for
+  <b>BS Computer Systems Engineering</b>, <b>MS Software Engineering</b>, <b>BS Software Engineering</b>,
+  or <b>BS Computer Science</b> respectively. <br><b>asuriteid</b> is your asurite id.</li>
+  <li>As part of all class header comments, that you create and turn-in this semester,
+  include a copyright notice, such as:
+  <b>Copyright 2018 Your Name</b>.</li>
+  <li>As part of the class header comments, include a <b>right to use</b> statement.
+  The examples presented in class use the Apache License Version 2, but you should put
+  whatever rights you prefer. At the very least, you must provide the instuctor and
+  the University with the right to build and evaluate
+  the software package for the purpose of determining your grade and program assessment.</li>
+  <li>As part of the class header comments, include a reference to the software's author, such as:<br>
+  <b>@author &nbsp;&nbsp;FirstName LastName&nbsp;&nbsp;&nbsp;&nbsp;mailto:FirstName.LastName@asu.edu</b>.</li>
+  <li>As part of the class header comments, include an indication of the software version, such as:<br>
+  <b>@version March 2, 2018</b></li>
+</ol>
+These comments are required on all code (classes) that you generate this semester. If you hand in an
+assigment that does not include them, it will not be graded.
+Here are <b>StudentJson</b> classes that demonstrated <b>Json</b> serialization in each language and
+platform <b>Android</b> and <b>iOS</b>. See:
+<a href="http://pooh.poly.asu.edu/Mobile/Assigns/Assign1/studentJsonClasses.jar" target="_blank">studentJsonClasses.jar</a>. Use java's
+<b>jar</b> command to extract this file. It will create a folder containing a <b>playground</b>
+that can be opened in <b>Xcode</b> and a <b>Java</b> class in the file <b>StudentJson.java</b>.
+<p><b><font size="+1">What To Hand-In</font></b>
+</p><p>
+The posted quiz does not need to be submitted, and should be used as
+a study guide.
+</p><p>
+Structure your project as two sub-directories of the folder named <b>Assign1MyASURITEID</b>.
+One sub-directory for the <b>iOS</b> app and the other for the <b>Android</b> app.
+You will submit this project, by first cleaning it (to remove all generated files.
+Then create a <b>jar</b> or <b>zip</b> archive of the project (Assign1*) directory.
+You can create a <b>Java Archive (jar)</b> by executing the following command from
+a terminal in the directory which is parent to the project directory:<br><br>
+<b>jar&nbsp;&nbsp;&nbsp;-cvf&nbsp;&nbsp;&nbsp;Assign1MyASURITEID.jar&nbsp;&nbsp;&nbsp;Assign1MyASURITEID/</b><br><br>
+That archive will then be submitted via
+<b>Blackboard</b>. See the Content section.
+</p><p><b><font size="+1">Grading Criteria</font></b>
+</p><p>
+</p><ul>
+  <li><b>5 points</b>. Your solutions build using Xcode and Android Studio. And, your
+  UI's appear properly in the simulator with an <b>iPhone 7</b> and
+  Android emulator with a <b>Nexus5-API23</b>.
+</li>
+  <li><b>5 points</b>. Your app should define and properly uses the class
+  representing <b>PlaceDescription</b>.
+  </li>
+  <li><b>5 points</b>.   Your solution includes comments described above as headers for each
+  class used in the app.
+  </li><li><b>5 points</b>. Proper usage of Xcode, and Android Studio specified versions to
+  create the projects as reflected by the project contents and formats, and no requirements
+  to localize the projects to the specified versions of the tools.
+  </li>
+<hr>
+<center>
+Email: <a href="mailto:Tim@asu.edu">Tim.Lindquist@asu.edu</a> | <a href="http://pooh.poly.asu.edu/Mobile/index.html">Ser423 Home</a><br>
+</center>
+
+
+</ul></body></html>
