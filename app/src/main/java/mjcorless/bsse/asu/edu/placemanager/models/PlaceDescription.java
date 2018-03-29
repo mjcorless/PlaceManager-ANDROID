@@ -1,12 +1,8 @@
-<<<<<<< HEAD:app/src/main/java/mjcorless/bsse/asu/edu/placemanager/models/Place.java
 package mjcorless.bsse.asu.edu.placemanager.models;
-=======
-package placemanager.mjcorless.bsse.asu.edu.placemanager.models;
->>>>>>> 6f910c21081c12730fba03559b25c14d071cb931:app/src/main/java/placemanager/mjcorless/bsse/asu/edu/placemanager/models/Place.java
 
 /**
  * Created by mcorl on 3/28/2018.
- * Example Place represented in Json
+ * Example PlaceDescription represented in Json
  * {
  * "name" : "ASU-Poly",
  * "description" : "Home of ASU's Software Engineering Programs",
@@ -20,7 +16,7 @@ package placemanager.mjcorless.bsse.asu.edu.placemanager.models;
  */
 
 // dummy class to encapsulate needed information for http://pooh.poly.asu.edu/Mobile/Assigns/Assign1/assign1.html
-public class Place
+public class PlaceDescription
 {
 	public String getName()
 	{
@@ -42,11 +38,7 @@ public class Place
 		this.description = description;
 	}
 
-<<<<<<< HEAD:app/src/main/java/mjcorless/bsse/asu/edu/placemanager/models/Place.java
 	public String getCategory() { return category; }
-=======
-	public String getCategory()	{ return category;	}
->>>>>>> 6f910c21081c12730fba03559b25c14d071cb931:app/src/main/java/placemanager/mjcorless/bsse/asu/edu/placemanager/models/Place.java
 
 	public void setCategory(String category)
 	{
