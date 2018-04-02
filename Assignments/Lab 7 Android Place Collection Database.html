@@ -1,0 +1,119 @@
+
+<!-- saved from url=(0060)http://pooh.poly.asu.edu/Mobile/Assigns/Assign7/assign7.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Lab 7 Android Place Collection Database</title>
+<!--<base target="_top">--><base href="." target="_top">
+
+<meta name="keywords" content="mobile applications, Swift, iOS, Android,
+Tim Lindquist">
+<style type="text/css">
+<!--
+.TitleFont {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 24pt; font-style: normal; font-weight: bold; color: #FFCC00}
+-->
+</style></head>
+<body bgcolor="#E0E0AF">
+<table border="2" width="100%">
+  <tbody><tr> 
+    <td height="95" width="23%" bgcolor="#FFC20E"> 
+      <div align="center"><font size="6" color="#9B0033"><b>Ser423</b></font></div>
+    </td>
+    <td height="95" width="77%" class="TitleFont" bgcolor="#9B0033"> 
+      <div align="center"><font size="6" color="#FFC20E"><b>Mobile Computing</b></font></div>
+    </td>
+  </tr>
+</tbody></table>
+
+<h2>Lab 7 Android Place Collection Database</h2>
+
+<h3><font color="#9B0033">Due as described on Blackboard.
+   </font></h3>
+<font color="#9B0033">Changes since distribution:
+<ul>
+  <li>No changes.
+  </li>
+</ul>
+</font>
+
+<p><b><font size="+1">Description</font></b>
+</p><p>
+Recast your Android Place Library app to work with a <b>SQLite</b> database as its underlying model.
+Your app should include a minimal database in the app bundle, which is used
+to initialize the app's database should it not already exist in internal
+storage. Your app should provide the ability to add new place descriptions,
+to remove place descriptions, and to modify existing place descriptions.
+Include the same place fields/properties as defined in prior assignments:
+See: <a href="http://pooh.poly.asu.edu/Mobile/Assigns/Assign1/assign1.html" target="_blank">Single View Place Places (Android part Only)</a>, and
+<a href="http://pooh.poly.asu.edu/Mobile/Assigns/Assign3/assign3.html" target="_blank">Multi-View Place Manager</a>.
+</p><p>
+</p><p><b><font size="+1">What To Hand-In</font></b>
+</p><p>
+The same packaging, documentation and solution formatting constraints as with the
+prior assignments apply to this assignment as well.
+</p><ol>
+  <li>Place all of your application source code into the package named:
+  <b>edu.asu.bsse.asuriteid.appname</b>
+  <br>where <b>bsse</b> designates your academic program:
+  <b>bscse</b>, <b>msse</b>, <b>bsse</b>, <b>bscs</b>, which stand for
+  <b>BS Computer Systems Engineering</b>, <b>MS Software Engineering</b>, <b>BS Software Engineering</b>,
+  or <b>BS Computer Science</b> respectively. <br><b>asuriteid</b> is your asurite id.</li>
+  <li>As part of all class header comments, that you create and turn-in this semester,
+  include a copyright notice, such as:
+  <b>Copyright 2016 Your Name</b>.</li>
+  <li>As part of the class header comments, include a <b>right to use</b> statement.
+  The examples presented in class use the Apache License Version 2, but you should put
+  whatever rights you prefer. At the very least, you must provide the instuctor and
+  the University with the right to build and evaluate
+  the software package for the purpose of determining your grade and program assessment.</li>
+  <li>As part of the class header comments, include a reference to the software's author, such as:<br>
+  <b>@author &nbsp;&nbsp;FirstName LastName&nbsp;&nbsp;&nbsp;&nbsp;mailto:FirstName.LastName@asu.edu</b>.</li>
+  <li>As part of the class header comments, include an indication of the software version, such as:<br>
+  <b>@version March 2, 2016</b></li>
+</ol>
+These comments are required on all code that you generate this semester. If you hand in an
+assigment that does not include them, it will not be graded.
+<p>
+Structure your project as a sub-directory of the folder named
+<b>Assign7MyASURITEID</b>.
+Use the same folder structure as used in the database example
+<a href="http://pooh.poly.asu.edu/Mobile/Examples/Unit08-Android-Sqlite/studentCourseDatabase.jar">studentCourseDatabase.jar</a>.
+The sub-directories should separately contain each of the following:
+</p><ul>
+  <li><b>The Android app, </b>and</li>
+  <li><b> The Database Initialization files</b>. These should mirror those in the
+  student course database example.</li>
+</ul>
+You will submit this project, by first cleaning its Android app
+to remove all generated files.
+Then create a <b>jar</b> or <b>zip</b> archive of the project (Assign7*) directory.
+You can create a <b>Java Archive (jar)</b> by executing the following command from
+a terminal in the directory which is parent to the project directory:<br><br>
+<b>jar&nbsp;&nbsp;&nbsp;-cvf&nbsp;&nbsp;&nbsp;Assign7MyASURITEID.jar&nbsp;&nbsp;&nbsp;Assign7MyASURITEID/</b><br><br>
+That archive will then be submitted via
+<b>Blackboard</b>. See the appropriate Week's section.
+<p><b><font size="+1">Grading Criteria</font></b>
+</p><p>
+</p><ul>
+  <li><b>8 points</b>. Your database definition and initialization files.
+  Your <b>Android</b> app should also define and properly use a
+  write-able database that's initialized from the app bundle to access, store, and modify
+  place information. Your app uses Sqlite to access this database.
+  </li>
+  <li><b>2 points</b>. Your app targets API 23 and uses API 23 as the minimum SDK version,
+  it uses the current compileSdkVersion (26). These will assure it builds and runs on
+  the grader's Android Studio (version 3) configuration. It uses the packaging constraints
+  defined in the first assignment, linked above.
+  </li>
+  <li><b>5 points</b>. Your app provides the ability to list and browse all place names,
+  to display the details of a selected place description, to add new place descriptions,
+  modify existing place descriptions, and delete existing place descriptions.
+  </li>
+  <li><b>5 points</b>. Your app provides the capabilty for the user to view the
+  great circle distance and initial heading between any two registered places as
+  selected by the user.</li>
+<hr>
+<center>
+Email: <a href="mailto:Tim@asu.edu">Tim.Lindquist@asu.edu</a> | <a href="http://pooh.poly.asu.edu/Mobile/index.html">Ser423 Home</a><br>
+</center>
+
+
+</ul></body></html>
