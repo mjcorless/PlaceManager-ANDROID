@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Place Manager</string>
 
-<<<<<<< HEAD
     <!-- Strings Place Information -->
     <string name="place">Place</string>
     <string name="description">Description</string>
@@ -11,8 +10,6 @@
     <string name="elevation">Elevation</string>
     <string name="latitude">Latitude</string>
     <string name="longitude">Longitude</string>
-=======
-    <!-- PlaceDescriptionActivity -->
-    <string name="placeName">Name</string>
->>>>>>> 6f910c21081c12730fba03559b25c14d071cb931
+    <string name="addPlaceBtn">Add Place</string>
+    <string name="title_activity_place_list">PlaceListActivity</string>
 </resources>
