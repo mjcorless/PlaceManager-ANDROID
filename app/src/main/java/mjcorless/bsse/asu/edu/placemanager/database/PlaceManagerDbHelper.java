@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
- * Copyright 2018 Your Name
+ * Copyright 2018 Matthew Corless
  * This code is free to use for educational purposes.
  *
  * @author Matthew Corless
