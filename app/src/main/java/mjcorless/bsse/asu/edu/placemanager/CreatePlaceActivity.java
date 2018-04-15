@@ -17,6 +17,12 @@ import mjcorless.bsse.asu.edu.placemanager.database.PlaceManagerDbHelper;
 import mjcorless.bsse.asu.edu.placemanager.models.PlaceDescription;
 
 /**
+ * Copyright 2018 Your Name
+ * This code is free to use for educational purposes.
+ *
+ * @author Matthew Corless
+ * mailto: mjcorless@asu.edu
+ * <p>
  * A basic view that allows the user to enter in place information
  */
 public class CreatePlaceActivity extends AppCompatActivity

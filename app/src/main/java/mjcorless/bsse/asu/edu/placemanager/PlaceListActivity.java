@@ -16,6 +16,15 @@ import java.util.List;
 
 import mjcorless.bsse.asu.edu.placemanager.database.PlaceManagerDbHelper;
 
+/**
+ * Copyright 2018 Your Name
+ * This code is free to use for educational purposes.
+ *
+ * @author Matthew Corless
+ * mailto: mjcorless@asu.edu
+ * <p>
+ * Lists the places in the database. Acts as the main activity of the app.
+ */
 public class PlaceListActivity extends AppCompatActivity
 {
 	private PlaceManagerDbHelper dbHelper;

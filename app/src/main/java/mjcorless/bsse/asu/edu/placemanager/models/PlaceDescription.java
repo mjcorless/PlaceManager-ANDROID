@@ -5,8 +5,25 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
+
 /**
- * Created by mcorl on 3/28/2018.
+ * Copyright 2018 Your Name
+ * This code is free to use for educational purposes.
+ *
+ * @author Matthew Corless
+ * mailto: mjcorless@asu.edu
+ * <p>
+ * Helps manage the SQLite database for the app
+ */
+
+/**
+ * Copyright 2018 Your Name
+ * This code is free to use for educational purposes.
+ *
+ * @author Matthew Corless
+ * mailto: mjcorless@asu.edu
+ * <p>
+ * <p>
  * Example PlaceDescription represented in Json
  * {
  * "name" : "ASU-Poly",
@@ -18,9 +35,11 @@ import java.io.Serializable;
  * "latitude" : 33.306388,
  * "longitude" : -111.679121
  * }
+ * <p>
+ * Dummy class to encapsulate needed information for http://pooh.poly.asu.edu/Mobile/Assigns/Assign1/assign1.html
+ * <p>
+ * NOTE: this implements Serializable because I was passing this class back and forth between activities. However, that is not the case right now.
  */
-
-// dummy class to encapsulate needed information for http://pooh.poly.asu.edu/Mobile/Assigns/Assign1/assign1.html
 public class PlaceDescription implements Serializable
 {
 	private static long serialVersionUID = -2518143671167959231L;
