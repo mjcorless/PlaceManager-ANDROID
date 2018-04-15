@@ -7,9 +7,13 @@
     <string name="category">Category</string>
     <string name="addressTitle">Address Title</string>
     <string name="addressFull">Address</string>
-    <string name="elevation">Elevation</string>
+    <string name="elevation">Elevation (m)</string>
     <string name="latitude">Latitude</string>
     <string name="longitude">Longitude</string>
-    <string name="addPlaceBtn">Add Place</string>
     <string name="title_activity_place_list">PlaceListActivity</string>
+    <string name="savePlaceBtn">Save Place</string>
+    <string name="deletePlaceBtn">Delete Place</string>
+
+    <!-- Strings Place List -->
+    <string name="addPlaceBtn">Add Place</string>
 </resources>
