@@ -14,11 +14,14 @@
             android:label="Current Places">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".CreatePlaceActivity"
             android:label="@string/app_name" />
+        <activity android:name=".DistanceActivity"></activity>
     </application>
+
 </manifest>

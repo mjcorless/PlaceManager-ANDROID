@@ -5,6 +5,15 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+/**
+ * Copyright 2018 Matthew Corless
+ * This code is free to use for educational purposes.
+ *
+ * @author Matthew Corless
+ * mailto: mjcorless@asu.edu
+ * <p>
+ * Helps manage the SQLite database for the app
+ */
 public class PlaceManagerDbHelper extends SQLiteOpenHelper
 {
 	// If you change the database schema, you must increment the database version.

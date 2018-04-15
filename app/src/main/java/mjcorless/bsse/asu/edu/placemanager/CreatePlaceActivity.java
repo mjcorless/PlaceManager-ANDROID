@@ -17,6 +17,12 @@ import mjcorless.bsse.asu.edu.placemanager.database.PlaceManagerDbHelper;
 import mjcorless.bsse.asu.edu.placemanager.models.PlaceDescription;
 
 /**
+ * Copyright 2018 Matthew Corless
+ * This code is free to use for educational purposes.
+ *
+ * @author Matthew Corless
+ * mailto: mjcorless@asu.edu
+ * <p>
  * A basic view that allows the user to enter in place information
  */
 public class CreatePlaceActivity extends AppCompatActivity
@@ -33,7 +39,6 @@ public class CreatePlaceActivity extends AppCompatActivity
 	public EditText longitudeTV;
 	public EditText latitudeTV;
 	public PlaceDescription placeDescription;
-	private PlaceManagerDbHelper dbHelper;
 	public int placeId;
 
 	@Override
@@ -127,7 +132,7 @@ public class CreatePlaceActivity extends AppCompatActivity
 
 	private void bindView(int placeId)
 	{
-		dbHelper = new PlaceManagerDbHelper(this);
+		PlaceManagerDbHelper dbHelper = new PlaceManagerDbHelper(this);
 		SQLiteDatabase db = dbHelper.getWritableDatabase();
 
 		Cursor cursor = db.rawQuery("SELECT * FROM PlaceDescription where PlaceId = ?", new String[]{Integer.toString(placeId)});
@@ -147,6 +152,7 @@ public class CreatePlaceActivity extends AppCompatActivity
 
 	private void addOrUpdatePlace()
 	{
+		PlaceManagerDbHelper dbHelper = new PlaceManagerDbHelper(this);
 		SQLiteDatabase db = dbHelper.getWritableDatabase();
 
 		ContentValues values = new ContentValues();
@@ -186,6 +192,7 @@ public class CreatePlaceActivity extends AppCompatActivity
 
 	private void deletePlace()
 	{
+		PlaceManagerDbHelper dbHelper = new PlaceManagerDbHelper(this);
 		SQLiteDatabase db = dbHelper.getWritableDatabase();
 
 		if (placeId > 0)

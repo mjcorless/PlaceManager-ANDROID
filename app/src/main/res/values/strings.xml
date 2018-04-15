@@ -16,4 +16,11 @@
 
     <!-- Strings Place List -->
     <string name="addPlaceBtn">Add Place</string>
+    <string name="distanceBtn">Compare Distances</string>
+
+    <!-- Distacne Activity -->
+    <string name="place1">First Place:</string>
+    <string name="place2">Second Place:</string>
+    <string name="greatCircle">Great Circle (m):</string>
+    <string name="initialHeading">Initial Heading (Bearing degrees):</string>
 </resources>
