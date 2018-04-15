@@ -11,9 +11,9 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import mjcorless.bsse.asu.edu.placemanager.database.PlaceManagerDbHelper;
-import mjcorless.bsse.asu.edu.placemanager.models.Address;
 import mjcorless.bsse.asu.edu.placemanager.models.PlaceDescription;
 
 /**
@@ -60,34 +60,66 @@ public class CreatePlaceActivity extends AppCompatActivity
 		{
 			bindView(placeId);
 		}
+		else
+		{
+			Button btn = findViewById(R.id.deletePlaceBtn);
+			btn.setText("Cancel");
+		}
 
-		createSaveBtnOnClick(placeId);
+		createSaveBtnOnClick();
+		createDeleteBtnOnClick();
 	}
 
-	private void createSaveBtnOnClick(int placeId)
+	private void createSaveBtnOnClick()
 	{
 		final Button button = findViewById(R.id.savePlaceBtn);
 		button.setOnClickListener(new View.OnClickListener()
 		{
 			public void onClick(View view)
 			{
-				placeDescription = new PlaceDescription();
-				placeDescription.setName(nameTV.getText().toString());
-				placeDescription.setCategory(categoryTV.getText().toString());
-				placeDescription.setDescription(descriptionTV.getText().toString());
 
-				Address address = new Address();
-				address.setTitle(addressTitleTV.getText().toString());
-				address.setPostalAddress(addressFullTV.getText().toString());
+				if (validInput())
+				{
+					placeDescription = new PlaceDescription();
+					placeDescription.setName(nameTV.getText().toString());
+					placeDescription.setCategory(categoryTV.getText().toString());
+					placeDescription.setDescription(descriptionTV.getText().toString());
+					placeDescription.setAddressTitle(addressTitleTV.getText().toString());
+					placeDescription.setAddressPostal(addressFullTV.getText().toString());
 
-				placeDescription.setAddress(address);
-				placeDescription.setElevation(Integer.parseInt(elevationTV.getText().toString()));
-				placeDescription.setLongitude(Float.parseFloat(longitudeTV.getText().toString()));
-				placeDescription.setLatitude(Float.parseFloat(latitudeTV.getText().toString()));
+					String elevString = elevationTV.getText().toString();
+					int elev = elevString == null || elevString.isEmpty() ? 0 : Integer.parseInt(elevString);
+					placeDescription.setElevation(elev);
 
+					String longString = longitudeTV.getText().toString();
+					float longi = longString == null || longString.isEmpty() ? 0 : Float.parseFloat(longString);
+					placeDescription.setLongitude(longi);
+
+					String latString = latitudeTV.getText().toString();
+					float lat = latString == null || latString.isEmpty() ? 0 : Float.parseFloat(latString);
+					placeDescription.setLatitude(lat);
+
+					Bundle bundle = new Bundle();
+					addOrUpdatePlace();
+					goToListView(bundle);
+				}
+				else
+				{
+					notifyUser();
+				}
+			}
+		});
+	}
+
+	private void createDeleteBtnOnClick()
+	{
+		final Button button = findViewById(R.id.deletePlaceBtn);
+		button.setOnClickListener(new View.OnClickListener()
+		{
+			public void onClick(View view)
+			{
+				deletePlace();
 				Bundle bundle = new Bundle();
-
-				addOrUpdatePlace();
 				goToListView(bundle);
 			}
 		});
@@ -121,7 +153,8 @@ public class CreatePlaceActivity extends AppCompatActivity
 		values.put("Name", placeDescription.getName());
 		values.put("Category", placeDescription.getCategory());
 		values.put("Description", placeDescription.getDescription());
-		values.put("AddressId", 1);
+		values.put("AddressTitle", placeDescription.getAddressTitle());
+		values.put("Address", placeDescription.getAddressPostal());
 		values.put("Elevation", placeDescription.getElevation());
 		values.put("Latitude", placeDescription.getLatitude());
 		values.put("Longitude", placeDescription.getLongitude());
@@ -138,6 +171,32 @@ public class CreatePlaceActivity extends AppCompatActivity
 				placeId = (int) newRowId;
 			}
 		}
+	}
+
+	private boolean validInput()
+	{
+		boolean isValid = true;
+
+		if (nameTV.getText().toString() == null || categoryTV.getText().toString() == null || descriptionTV.getText().toString() == null || addressTitleTV.getText().toString() == null || addressFullTV.getText().toString() == null || elevationTV.getText().toString() == null || longitudeTV.getText().toString() == null || latitudeTV.getText().toString() == null)
+		{
+			isValid = false;
+		}
+		return isValid;
+	}
+
+	private void deletePlace()
+	{
+		SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+		if (placeId > 0)
+		{
+			db.delete("PlaceDescription", "PlaceId = ?", new String[]{Integer.toString(placeId)});
+		}
+	}
+
+	private void notifyUser()
+	{
+		Toast.makeText(this, "Could not Add or Update due to an empty field.", Toast.LENGTH_LONG).show();
 	}
 
 	/**
