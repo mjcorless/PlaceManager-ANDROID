@@ -10,6 +10,7 @@ import java.io.Serializable;
 
 /**
  * Copyright 2018 Matthew Corless
+ * Copyright 2018 Your Name
  * This code is free to use for educational purposes.
  *
  * @author Matthew Corless
@@ -28,10 +29,7 @@ import java.io.Serializable;
  * "latitude" : 33.306388,
  * "longitude" : -111.679121
  * }
- * <p>
- * Dummy class to encapsulate needed information for http://pooh.poly.asu.edu/Mobile/Assigns/Assign1/assign1.html
- * <p>
- * NOTE: this implements Serializable because I was passing this class back and forth between activities. However, that is not the case right now.
+ * NOTE: this implements Serializable because I was passing this class back and forth between activities. However, that is not the case anymore
  */
 public class PlaceDescription implements Serializable
 {
